@@ -1,0 +1,112 @@
+/* ============================================================
+   千纸鹤 · TYPOGRAPHY
+   Vintage editorial serif (EN) · thin Song + rounded sans (CN)
+   ============================================================ */
+
+:root {
+  /* ---- Families ---- */
+  /* English: vintage editorial / art-book serif */
+  --font-serif-display: "Cormorant Garamond", "Noto Serif SC", Georgia, serif;
+  --font-serif-text:    "EB Garamond", "Noto Serif SC", Georgia, serif;
+  /* Chinese: 细宋 (literary serif) + 圆润黑体 (instructions / UI) */
+  --font-song:  "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-hei:   "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  /* Handwritten accent — stamps, thank-you notes (sparingly) */
+  --font-hand:  "Ma Shan Zheng", "Cormorant Garamond", cursive;
+  /* Letterspaced label caps reuse the display serif */
+  --font-label: "Cormorant Garamond", "Noto Sans SC", serif;
+
+  /* ---- Fluid display scale (vintage poster headings) ---- */
+  --fs-display:  clamp(3rem, 6vw, 5.5rem); /* @kind font */ /* hero serif */
+  --fs-h1:       clamp(2.25rem, 4vw, 3.5rem); /* @kind font */
+  --fs-h2:       clamp(1.75rem, 3vw, 2.5rem); /* @kind font */
+  --fs-h3:       1.5rem;     /* @kind font */
+  --fs-h4:       1.25rem;    /* @kind font */
+  --fs-body-lg:  1.1875rem;  /* @kind font */
+  --fs-body:     1.0625rem;  /* @kind font */
+  --fs-small:    0.9375rem;  /* @kind font */
+  --fs-caption:  0.8125rem;  /* @kind font */
+  --fs-label:    0.75rem;    /* @kind font */ /* letterspaced caps */
+
+  /* ---- Weights (kept light — "不要太粗") ---- */
+  --fw-light:   300;  /* @kind font */
+  --fw-normal:  400;  /* @kind font */
+  --fw-medium:  500;  /* @kind font */
+  --fw-semi:    600;  /* @kind font */
+
+  /* ---- Line heights (airy, "有呼吸感") ---- */
+  --lh-tight:   1.12;  /* @kind font */
+  --lh-snug:    1.32;  /* @kind font */
+  --lh-body:    1.72;  /* @kind font */
+  --lh-relaxed: 1.9;   /* @kind font */
+
+  /* ---- Letter-spacing ---- */
+  --ls-tight:   -0.01em;  /* @kind font */
+  --ls-normal:  0;        /* @kind font */
+  --ls-wide:    0.08em;   /* @kind font */
+  --ls-label:   0.22em;   /* @kind font */
+  --ls-cn-wide: 0.18em;   /* @kind font */
+}
+
+/* ---------- Base element defaults ---------- */
+body {
+  font-family: var(--font-hei);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--text-body);
+  font-weight: var(--fw-normal);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-song);
+  color: var(--text-primary);
+  font-weight: var(--fw-normal);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-tight);
+  margin: 0;
+}
+
+/* ---------- Utility type classes ---------- */
+.t-display {
+  font-family: var(--font-serif-display);
+  font-size: var(--fs-display);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  color: var(--text-primary);
+}
+.t-serif {
+  font-family: var(--font-serif-display);
+  font-weight: var(--fw-normal);
+}
+.t-song {
+  font-family: var(--font-song);
+  font-weight: var(--fw-normal);
+  letter-spacing: var(--ls-cn-wide);
+}
+.t-hand {
+  font-family: var(--font-hand);
+  font-weight: var(--fw-normal);
+}
+.t-label {
+  font-family: var(--font-label);
+  font-size: var(--fs-label);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.t-body {
+  font-family: var(--font-hei);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--text-body);
+}
+.t-caption {
+  font-family: var(--font-hei);
+  font-size: var(--fs-caption);
+  color: var(--text-faint);
+  line-height: var(--lh-snug);
+}
